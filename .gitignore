@@ -33,4 +33,4 @@ yarn-error.log*
 # vercel
 .vercel
 
-fbservercreds.json
+/fbservercreds.json
