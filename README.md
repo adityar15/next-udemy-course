@@ -8,20 +8,13 @@ Please add your own credentials in fbservercreds.json for firebase admin creds.
 
 For environment variables check the .env.local file and add the variable value accordingly.
 
-First, run the development server:
+To run this project make sure you have added your env variables in .env.local and have downloaded firebase credential file for service account.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Once downloaded put the firebase service account file in the root directory and name it as fbservercreds.json.
 
-## Learn More
+## Important
 
+This repo and the project is only for educational purpose and not for commercial purpose. I request you to make an ethical use of this repo and make the most for your learning.
 
+This repo is the part of a [Udemy Course](https://www.udemy.com/course/learning-nextjs-and-creating-a-web-app).
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
