@@ -31,6 +31,7 @@ export default function CheckoutForm({onSuccess}) {
  const [uid, setUID] = useState("")
 
   useEffect(()=>{
+    console.log("url", `${process.env.NEXT_PUBLIC_URL}/events/${event.id}/?uid=${loggedInUser.uid}`)
     setReturnURL(`${process.env.NEXT_PUBLIC_URL}/events/${event.id}/?uid=${loggedInUser.uid}`)
   }, [event, loggedInUser])
 
