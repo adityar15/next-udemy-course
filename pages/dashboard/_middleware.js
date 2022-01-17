@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 export async function middleware(req, ev){
     
 
-   const request = await fetch('http://localhost:3000/api/user/checkAuthStatus', {
+   const request = await fetch(`${process.env.PROJECT_URL}/api/user/checkAuthStatus`, {
         method: "POST",
         body: JSON.stringify({token: req.cookies.token}),
         headers: {
