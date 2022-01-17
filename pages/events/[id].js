@@ -30,7 +30,7 @@ export default function EventDetail({event, secret}) {
 
     async function handleSuccess(pi, uid)
     {
-     
+      
         const docRef = await addNew('orders', {
             user_id: uid,
             organiser_id: event.created_by,
@@ -44,8 +44,13 @@ export default function EventDetail({event, secret}) {
     }
 
     useEffect(()=>{
-        if(loggedInUser.uid == event.created_by || !loggedInUser || event.price==0)
+        console.log("before payment secret", secret)
+     
+        if(loggedInUser.uid == event.created_by || !loggedInUser.uid || event.price==0)
         setShowPayment(false)
+        else
+        setShowPayment(true)
+        
     }, [loggedInUser])
 
     return (
