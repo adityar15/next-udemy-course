@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Aditya"
+    },
+    {
+        "name": "Adi"
+    },
+    {
+        "name": "John Doe"
+    },
+    {
+        "name": "man01",
+        "price": 20,
+        "image": "https://example.com/image1",
+        "description": "Aicha gho this is man 01"
+    },
+    {
+        "name": "woman01",
+        "price": 50,
+        "image": "https://example.com/image2",
+        "description": "Zavli this is woman 01"
+    }
+]
