@@ -19,7 +19,7 @@ const handler = nc().post(async (req, res) => {
         })
 
           const decoded = await getAuth().verifyIdToken(req.body.token)
-        //   console.log("decoded", decoded)
+          console.log("decoded", decoded)
           res.status(200).json({success: decoded})
     }
     catch(err){
