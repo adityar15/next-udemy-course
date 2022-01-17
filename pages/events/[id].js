@@ -74,41 +74,41 @@ export default function EventDetail({event, secret}) {
 
 
 
-// export async function getStaticPaths(){
+export async function getStaticPaths(){
   
-//     const date = moment().format("YYYY-MM-DD")
+    const date = moment().format("YYYY-MM-DD")
   
-//     if(admin.apps.length == 0)
-//     admin.initializeApp({
-//         credential: admin.credential.cert(creds)
-//     })
+    if(admin.apps.length == 0)
+    admin.initializeApp({
+        credential: admin.credential.cert(creds)
+    })
   
-//     const db = getFirestore()
+    const db = getFirestore()
    
-//     let paths = []
+    let paths = []
   
-//     const eventsRef = db.collection('events');
-//     const snapshot = await eventsRef.where('date', '>=', date).get();
-//     if (snapshot.empty) {
-//       console.log('No matching documents.');
-//     }  
+    const eventsRef = db.collection('events');
+    const snapshot = await eventsRef.where('date', '>=', date).get();
+    if (snapshot.empty) {
+      console.log('No matching documents.');
+    }  
   
-//     snapshot.forEach(doc => {
+    snapshot.forEach(doc => {
   
-//         paths.push({params: {
-//             id: doc.id
-//         }})
+        paths.push({params: {
+            id: doc.id
+        }})
     
-//     });
+    });
    
-//     return {
-//       paths: paths,
-//       fallback: 'blocking'
-//     }
-// }
+    return {
+      paths: paths,
+      fallback: 'blocking'
+    }
+}
 
 
-export async function getServerSideProps(req)
+export async function getStaticProps(req)
 {
     
   const date = moment().format("YYYY-MM-DD")
@@ -161,6 +161,7 @@ export async function getServerSideProps(req)
         event: event,
         secret: paymentIntent.client_secret
     },
+    revalidate: 15 * 60
   }
 
 }
