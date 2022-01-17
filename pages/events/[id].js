@@ -44,13 +44,8 @@ export default function EventDetail({event, secret}) {
     }
 
     useEffect(()=>{
-        if(loggedInUser.uid == event.created_by)
+        if(loggedInUser.uid == event.created_by || !loggedInUser || event.price==0)
         setShowPayment(false)
-        
-        if(event.price == 0)
-        {
-            setShowPayment(false)
-        }
     }, [loggedInUser])
 
     return (
